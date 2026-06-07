@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>PDF to Audio</title>
+    <link rel="stylesheet" href="/static/styles.css">
+  </head>
+  <body>
+    <main class="app-shell">
+      <section class="workspace" aria-labelledby="app-title">
+        <div class="header-row">
+          <div>
+            <p class="eyebrow">PDF to Audio</p>
+            <h1 id="app-title">Upload a PDF and listen</h1>
+          </div>
+          <div class="status-pill" id="statusPill">Idle</div>
+        </div>
+
+        <form id="uploadForm" class="upload-panel">
+          <input id="pdfInput" name="pdf" type="file" accept="application/pdf,.pdf">
+          <label class="drop-zone" id="dropZone" for="pdfInput">
+            <span class="drop-icon" aria-hidden="true">PDF</span>
+            <span class="drop-title" id="fileName">Choose or drop a PDF</span>
+            <span class="drop-note">The selected file stays on this computer.</span>
+          </label>
+        </form>
+
+        <div class="controls" aria-label="Playback controls">
+          <button id="uploadButton" class="button secondary" type="button">Upload PDF</button>
+          <button id="startButton" class="button primary" type="button" disabled>Start</button>
+          <button id="stopButton" class="button danger" type="button" disabled>Stop</button>
+        </div>
+
+        <div class="progress-area">
+          <div class="progress-bar" aria-hidden="true">
+            <span id="progressFill"></span>
+          </div>
+          <p id="message">Upload a PDF to begin.</p>
+        </div>
+      </section>
+    </main>
+
+    <script src="/static/app.js"></script>
+  </body>
+</html>
